@@ -1,0 +1,7 @@
+apiVersion: lock.io/v1beta1
+kind: LockPVC
+metadata:
+  name: lockpvc
+spec:
+  # Add fields here
+  pvc: pvc

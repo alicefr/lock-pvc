@@ -1,0 +1,16 @@
+domain: lock.io
+layout:
+- go.kubebuilder.io/v3
+projectName: lock-pvc
+repo: github.com/alicefr/lock-pvc
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: lock.io
+  group: lock.io
+  kind: LockPVC
+  path: github.com/alicefr/lock-pvc/api/v1beta1
+  version: v1beta1
+version: "3"

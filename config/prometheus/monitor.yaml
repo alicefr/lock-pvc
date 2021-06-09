@@ -1,0 +1,20 @@
+
+# Prometheus Monitor Service (Metrics)
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    control-plane: lock-pvc-controller-manager
+  name: lock-pvc-controller-manager-metrics-monitor
+  namespace: lock-pvc-system
+spec:
+  endpoints:
+    - path: /metrics
+      port: https
+      scheme: https
+      bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+      tlsConfig:
+        insecureSkipVerify: true
+  selector:
+    matchLabels:
+      control-plane: lock-pvc-controller-manager

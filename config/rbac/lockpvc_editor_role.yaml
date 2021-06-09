@@ -1,0 +1,24 @@
+# permissions for end users to edit lockpvcs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: lockpvc-editor-role
+rules:
+- apiGroups:
+  - lock.io
+  resources:
+  - lockpvcs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - lock.io
+  resources:
+  - lockpvcs/status
+  verbs:
+  - get
